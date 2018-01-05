@@ -7,10 +7,9 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.junit.After;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.*;
 
-import com.experitest.client.Client;
-import com.experitest.client.GridClient;
+import com.experitest.client.*;
 
 public class BaseTest
 {
@@ -22,11 +21,11 @@ public class BaseTest
 	{
 		initCloudProperties();
 		String accessKey = getProperty("accessKey", cloudProperties);
-		if (accessKey != null && !accessKey.isEmpty())
-		{
-			gridClient = new GridClient(accessKey, getProperty("url", cloudProperties));
-		}
-		else
+//		if (accessKey != null && !accessKey.isEmpty())
+//		{
+//			gridClient = new GridClient(accessKey, getProperty("url", cloudProperties));
+//		}
+//		else
 		{
 			gridClient = new GridClient(getProperty("username", cloudProperties),
 					getProperty("password", cloudProperties), getProperty("project", cloudProperties),
